@@ -1,24 +1,79 @@
-# README
+# アプリケーション名
+創作者向け作品分析用webアプリケーション『Aristotelēs』
+# アプリケーション概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# URL
 
-Things you may want to cover:
+# テスト用アカウント
 
-* Ruby version
+# 利用方法
 
-* System dependencies
+# アプリケーションを作成した背景
 
-* Configuration
+# 実装した機能についての画像やGIFおよびその説明
 
-* Database creation
+# 実装予定の機能
 
-* Database initialization
+# データベース設計
 
-* How to run the test suite
+## users テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| username           | string | null: false |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false |
 
-* Deployment instructions
+### Association
+- has_many :stories, dependent: :destroy
 
-* ...
+## stories テーブル
+
+| Column    | Type       | Options     |
+| --------- | ---------- | ----------- |
+| title     | string     | null: false |
+| genre_id  | integer    | null: false |
+| medium_id | integer    | null: false |
+| user      | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- has_many :beat_sheet_answers, dependent: :destroy
+
+## beat_sheet_questions テーブル
+
+| Column  | Type       | Options     |
+| ------- | ---------- | ----------- |
+| content | text       | null: false |
+
+### Association
+- has_many :beat_sheet_answers, dependent: :destroy
+
+## beat_sheet_answers テーブル
+
+| Column              | Type       | Options     |
+| ------------------- | ---------- | ----------- |
+| content             | text       | null: false |
+| percentage          | integer    | null: false |
+| lows_and_highs      | integer    | null: false |
+| story               | references | null: false, foreign_key: true |
+| beat_sheet_question | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :story
+- belongs_to :beat_sheet_question
+
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/5be749c25c7bee792360f5ec4228888b.png)](https://gyazo.com/5be749c25c7bee792360f5ec4228888b)
+
+# 画面遷移図
+
+# 開発環境
+
+# ローカルでの動作方法
+
+# 工夫したポイント
+
+# 改善点
+
+# 制作時間
