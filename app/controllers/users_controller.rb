@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
 end
-def index
+def show
   
 end
