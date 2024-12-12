@@ -20,7 +20,7 @@
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
-| username           | string | null: false |
+| nickname           | string | null: false |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
 

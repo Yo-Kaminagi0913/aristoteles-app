@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 画面全体の高さを確保 */
+}
+
+main {
+  flex: 1; /* メインコンテンツが余白を埋める */
+  padding: 1rem; /* 必要に応じて調整 */
+}
+
+@import "shared/header";
+@import "shared/footer";
+
