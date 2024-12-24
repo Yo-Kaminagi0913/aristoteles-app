@@ -1,0 +1,30 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  .row {
+    margin-bottom: 20px;
+
+    .col-md-4 {
+      h2 {
+        color: #333;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
