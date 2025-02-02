@@ -4,11 +4,11 @@
       <h2>ユーザー情報</h2>
       <p>ユーザー名: <%= @user.nickname %></p>
       <p>メールアドレス: <%= @user.email %></p>
-      <%# <p>作品分析の投稿数: <%= @user.analyses.count %></p> %>
+      <%# <p>作品分析の投稿数: <%= @user.analyses.count %></p>
     </div>
     <div class="col-md-8">
       <h2>投稿した作品分析</h2>
-      <%# <% if @user.analyses.present? %> %>
+      <%# <% if @user.analyses.present? %>
         <table class="table">
           <thead>
             <tr>
@@ -20,19 +20,19 @@
             </tr>
           </thead>
           <tbody>
-            <%# <% @user.analyses.each do |analysis| %> %>
+            <%# <% @user.analyses.each do |analysis| %>
               <tr>
-                <%# <td><%= analysis.title %></td> %>
-                <%# <td><%= analysis.work.title %></td> %>
-                <%# <td><%= analysis.created_at.strftime("%Y/%m/%d") %></td> %>
-                <%# <td><%= link_to '編集', edit_analysis_path(analysis) %></td> %>
-                <%# <td><%= link_to '削除', analysis_path(analysis), data: { confirm: '本当に削除しますか？' }, method: :delete %></td> %>
+                <%# <td><%= analysis.title %></td>
+                <%# <td><%= analysis.work.title %></td>
+                <%# <td><%= analysis.created_at.strftime("%Y/%m/%d") %></td>
+                <%# <td><%= link_to '編集', edit_analysis_path(analysis) %></td>
+                <%# <td><%= link_to '削除', analysis_path(analysis), data: { confirm: '本当に削除しますか？' }, method: :delete %></td>
               </tr>
-            <%# <% end %> %>
+            <%# <% end %>
           </tbody>
         </table>
-      <%# <% else %> %>
+      <%# <% else %>
         <p>まだ作品分析を投稿していません。</p>
-      <%# <% end %> %>
+      <%# <% end %>
     </div>
   </div>
