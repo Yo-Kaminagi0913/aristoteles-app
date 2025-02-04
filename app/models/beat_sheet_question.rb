@@ -1,0 +1,2 @@
+class BeatSheetQuestion < ApplicationRecord
+end
