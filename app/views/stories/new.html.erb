@@ -1,0 +1,16 @@
+<h1>作品情報の登録</h1>
+<%= form_with model: @story, url: stories_path do |f| %>
+  <div>
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :genre_id, 'ジャンル' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
+  <div>
+    <%= f.label :medium_id, '媒体' %>
+    <%= f.collection_select :medium_id, Medium.all, :id, :name %>
+  </div>
+  <%= f.submit '登録' %>
+<% end %>
