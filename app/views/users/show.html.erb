@@ -4,11 +4,17 @@
       <h2>ユーザー情報</h2>
       <p>ユーザー名: <%= @user.nickname %></p>
       <p>メールアドレス: <%= @user.email %></p>
-      <%# <p>作品分析の投稿数: <%= @user.analyses.count %></p>
+      <p>作品分析の投稿数: <%= @user.stories.count %></p>
     </div>
     <div class="col-md-8">
       <h2>投稿した作品分析</h2>
-      <%# <% if @user.analyses.present? %>
+
+      <!-- 作品登録ボタン -->
+      <div class="mb-3">
+        <%= link_to '作品を登録する', new_story_path, class: 'btn btn-primary' %>
+      </div>
+      
+      <% if @user.stories.present? %>
         <table class="table">
           <thead>
             <tr>
@@ -20,19 +26,21 @@
             </tr>
           </thead>
           <tbody>
-            <%# <% @user.analyses.each do |analysis| %>
+            <%# <% @user.stories.each do |story| %>
               <tr>
-                <%# <td><%= analysis.title %></td>
-                <%# <td><%= analysis.work.title %></td>
-                <%# <td><%= analysis.created_at.strftime("%Y/%m/%d") %></td>
-                <%# <td><%= link_to '編集', edit_analysis_path(analysis) %></td>
-                <%# <td><%= link_to '削除', analysis_path(analysis), data: { confirm: '本当に削除しますか？' }, method: :delete %></td>
+                <%# <><%= story.title %>
+                <%# <><%= Genre.find(story.genre_id).name %>
+                <%# <td><%= Medium.find(story.medium_id).name %>
+                <%# <td><%= story.created_at.strftime("%Y/%m/%d") %>
+                <%# <td><%= link_to '編集', edit_story_path(story) %>
+                <%# <td><%= link_to '削除', story_path(story), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
               </tr>
             <%# <% end %>
           </tbody>
         </table>
-      <%# <% else %>
+      <% else %>
         <p>まだ作品分析を投稿していません。</p>
-      <%# <% end %>
+      <% end %>
     </div>
   </div>
+</div>
