@@ -1,0 +1,2 @@
+class StoryQuestionsController < ApplicationController
+end
