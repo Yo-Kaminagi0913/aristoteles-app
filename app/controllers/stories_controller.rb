@@ -6,7 +6,7 @@ class StoriesController < ApplicationController
   def create
     @story = current_user.stories.build(story_params)
     if @story.save
-      redirect_to new_story_questions_path(@story)
+      redirect_to new_story_story_question_path(@story)
     else
       render :new
     end
