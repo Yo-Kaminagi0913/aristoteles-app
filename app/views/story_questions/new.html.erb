@@ -4,6 +4,8 @@
   <%= form_with model: BeatSheetAnswer.new, url: story_story_questions_path(@story) do |f| %>
     <%= f.hidden_field :beat_sheet_question_id, value: question.id %>
     <%= f.text_area :content, placeholder: '回答を入力してください' %>
+    <%= f.text_area :percentage, placeholder: '開始から何%の部分ですか' %>
+    <%= f.text_area :lows_and_highs, placeholder: '物語全体の起伏の中でどこにあたるか、10段階の数字で選んでください' %>
     <%= f.submit '回答を保存' %>
   <% end %>
 <% end %>

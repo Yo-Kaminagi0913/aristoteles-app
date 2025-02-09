@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_04_070923) do
+ActiveRecord::Schema[7.0].define(version: 2025_02_09_081014) do
   create_table "beat_sheet_answers", charset: "utf8mb3", force: :cascade do |t|
     t.text "content", null: false
-    t.text "percentage", null: false
-    t.text "lows_and_highs", null: false
+    t.integer "percentage", null: false
+    t.integer "lows_and_highs", null: false
     t.bigint "story_id", null: false
     t.bigint "beat_sheet_question_id", null: false
     t.datetime "created_at", null: false
